@@ -6,6 +6,9 @@ import java.util.List;
 import ubb.mihai.entities.Cake;
 
 public class CakeBuilder {
+	public CakeBuilder() {
+	}
+
 	private Cake cake;
 
 	private List<String> layers;
