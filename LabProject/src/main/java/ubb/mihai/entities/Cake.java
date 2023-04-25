@@ -10,7 +10,15 @@ public class Cake {
 		this.layers = new ArrayList<>();
 	}
 
+	public List<String> getLayers() {
+		return layers;
+	}
+
 	public void setLayers(List<String> layers) {
 		this.layers = layers;
+	}
+
+	public int getSize() {
+		return layers.size();
 	}
 }
