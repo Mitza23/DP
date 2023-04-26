@@ -4,16 +4,23 @@ import ubb.mihai.entities.Cake;
 import ubb.mihai.repository.Repository;
 import ubb.mihai.utils.CakeBuilder;
 
-import java.util.List;
-
 public class CakeService {
     Repository<Cake> repository;
+    CakeBuilder cakeBuilder;
 
-    CakeBuilder cakeBuilder = new CakeBuilder();
+    public CakeService(CakeBuilder cakeBuilder) {
+        this.cakeBuilder = cakeBuilder;
+    }
 
-    public void add(List<String> layers) {
+    public CakeService(Repository<Cake> repository, CakeBuilder cakeBuilder) {
+        this.repository = repository;
+        this.cakeBuilder = cakeBuilder;
+    }
+
+    public void add(String layers) {
+        String[] layerList = layers.split(" ");
         cakeBuilder.createCake();
-        for(String layer: layers) {
+        for (String layer : layerList) {
             cakeBuilder.addLayer(layer);
         }
         repository.add(cakeBuilder.buildCake());
