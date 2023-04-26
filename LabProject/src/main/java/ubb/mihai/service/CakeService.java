@@ -29,4 +29,8 @@ public class CakeService {
     public void save() {
         repository.save();
     }
+
+    public void setRepository(Repository<Cake> repository) {
+        this.repository = repository;
+    }
 }

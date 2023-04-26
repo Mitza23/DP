@@ -10,5 +10,7 @@ public class Main {
 		CakeBuilder cakeBuilder = new CakeBuilder();
 		CakeService cakeService = new CakeServiceProxy(cakeBuilder);
 		Console console = new Console(cakeService);
+		console.start();
+		console.printMenu();
 	}
 }
